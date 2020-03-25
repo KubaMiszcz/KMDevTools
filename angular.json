@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "KM-DevTools": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "KM-DevTools"
+    }
+  },
+  "defaultProject": "KM-DevTools",
+  "cli": {
+    "analytics": "bb8fd038-3566-4ab6-a68f-879f820d1935"
+  }
 }
