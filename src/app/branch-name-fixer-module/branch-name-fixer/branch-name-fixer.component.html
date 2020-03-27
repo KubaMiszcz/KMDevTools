@@ -1,59 +1,85 @@
-<div class="col">
-  <h1 class="mt-4">Branch/Commit space fixer</h1>
+<div class="col p-0 pt-4">
+  <div class="card">
+    <div class="card-body">
 
-  <div class="row">
+      <h3 class="mt-2">Branch/Commit name fixer</h3>
 
-    <div class="col-2">
-      <div class="form-group">
-        <!-- Default inline 1-->
-        <div class="custom-control custom-radio mb-2" (click)="setPrefix('none')">
-          <input type="radio" class="custom-control-input" id="customRadio1" name="inlineDefaultRadiosExample">
-          <label class="custom-control-label" for="customRadio1">none</label>
-        </div>
+      <div class="row">
 
-        <!-- Default inline 2-->
-        <div class="custom-control custom-radio mb-2" (click)="setPrefix('feature/')">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="inlineDefaultRadiosExample">
-          <label class="custom-control-label" for="customRadio2">feature/</label>
-        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body p-2">
+              <p class="card-text mb-2">Prefix:</p>
+              <div class="form-group">
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix('')">
+                  <input type="radio" class="custom-control-input" id="customRadio1" name="inlineDefaultRadiosExample">
+                  <label class="custom-control-label" for="customRadio1">none</label>
+                </div>
 
-        <!-- Default inline 3-->
-        <div class="custom-control custom-radio mb-2" (click)="setPrefix('bugfix/')">
-          <input type="radio" class="custom-control-input" id="customRadio3" name="inlineDefaultRadiosExample">
-          <label class="custom-control-label" for="customRadio3">bugfix/</label>
-        </div>
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix('feature/')">
+                  <input type="radio" class="custom-control-input" id="customRadio2" name="inlineDefaultRadiosExample">
+                  <label class="custom-control-label" for="customRadio2">feature/</label>
+                </div>
 
-        <!-- <div class="custom-control custom-radio" (click)="setPrefix('none')">
-              <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="">
-              <label class="custom-control-label" for="customRadio3">none</label>
+                <!-- Default inline 3-->
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix('bugfix/')">
+                  <input type="radio" class="custom-control-input" id="customRadio3" name="inlineDefaultRadiosExample">
+                  <label class="custom-control-label" for="customRadio3">bugfix/</label>
+                </div>
+              </div>
             </div>
-            <div class="custom-control custom-radio" (click)="setPrefix('feature/')">
-              <input type=" radio" id="customRadio1" name="customRadio" class="custom-control-input" value="feature/">
-              <label class="custom-control-label" for="customRadio1">feature/</label>
+          </div>
+        </div>
+
+        <div class="col-10 pl-1">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="form-group">
+                <label for="">branch-commit</label>
+                <input [(ngModel)]="branchName" type="text" class="form-control mb-4" name="branchname" id="branchname" aria-describedby="helpId"
+                  placeholder="branch/commit name" value="asdf asdasd,asd asdasd" (change)="rename()" (click)="rename()">
+                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+
+                <label for="">fixed-branch-commit</label>
+                <input [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname" id="fixedbranchname"
+                  aria-describedby="helpId" placeholder="fixed branch/commit name" value="">
+                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+              </div>
             </div>
-            <div class="custom-control custom-radio" (click)="setPrefix('bugfix/')">
-              <input type=" radio" id="customRadio2" name="customRadio" class="custom-control-input" value="bugfix/" checked>
-              <label class="custom-control-label" for="customRadio2">bugfix/</label>
-            </div> -->
+          </div>
+        </div>
+
+
       </div>
-    </div>
 
-    <div class="col-10">
-      <div class="form-group">
-        <label for="">branch-commit</label>
-        <input [(ngModel)]="branchName" type="text" class="form-control mb-4" name="branchname" id="branchname" aria-describedby="helpId"
-          placeholder="branch/commit name" value="asdf asdasd,asd asdasd" (change)="rename()">
-        <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
-
-        <label for="">fixed-branch-commit</label>
-        <input [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname" id="fixedbranchname" aria-describedby="helpId"
-          placeholder="fixed branch/commit name" value="">
-        <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+      <div class="col p-0 pt-3">
+        <button type="submit" class="btn btn-block btn-primary btn-lg" (click)="rename()">Rename</button>
       </div>
+
+      <div class="col p-0 pt-3">
+        <div class="card">
+          <div class="card-body p-2">
+            <p class="card-text mb-2">multiple <code>space</code>, characters:
+              <code> ^</code>
+              <code> ;</code>
+              <code> :</code>
+              <code> ~</code>
+              <code> ?</code>
+              <code> *</code>
+              <code> <</code>
+              <code> ></code>
+              <code> |</code>
+              <code> \</code> ,
+              last <code>'.'</code>, last <code>'_'</code>, last <code>space</code></p>
+            <p class="card-text mb-2">Replaces: <code>space</code> to <code>'_'</code>,
+              <code>','</code> to <code>_i_'</code></p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-
-
   </div>
 
-  <button type="submit" class="btn btn-block btn-primary btn-lg" (click)="rename()">Rename</button>
+</div>
