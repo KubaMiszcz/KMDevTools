@@ -4,20 +4,22 @@
 
 
       <div class="form-group">
-        <label for="">standard Guid</label>
+        <label for="">standard Guid/UUID</label>
         <input [(ngModel)]="guid" type="text" class="form-control mb-4" name="guid" id="guid" aria-describedby="helpId" placeholder="guid" value=""
-          (change)="rename()" (click)="rename()">
+          (click)="guidToHex(guid)">
         <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
 
         <label for="">Hex</label>
-        <input [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value="">
+        <input [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
+          (click)="hexToGuid(hex)">
         <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
       </div>
 
 
 
-      <div class="col p-0 pt-3">
-        <button type="submit" class="btn btn-block btn-primary btn-lg" (click)="rename()">Convert</button>
+      <div class="col p-0 pt-3 d-flex">
+        <button type="submit" class="flex-fill btn btn-primary btn-lg " (click)="guidToHex(guid)">Guid2Hex</button>
+        <button type="submit" class="flex-fill btn btn-primary btn-lg ml-3" (click)="hexToGuid(hex)">Hex2Guid</button>
       </div>
 
       <div class="col p-0 pt-3">
