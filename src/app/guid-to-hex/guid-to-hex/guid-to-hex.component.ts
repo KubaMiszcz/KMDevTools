@@ -28,15 +28,6 @@ export class GuidToHexComponent implements OnInit {
       this.guid = hexToGuid(val, false);
       console.log(this.hex, '   ===>>>   ', this.guid);
     }
-
-    // const uuidStringFromHexWithLeadingZero = hexToUuid('0xd3fd354067184687956bc8618a26e335');
-    // console.log(uuidStringFromHexWithLeadingZero); //d3fd3540-6718-4687-956b-c8618a26e335
-    // this.guid = hexToGuid('0xd3fd354067184687956bc8618a26e335');
-    // console.log(this.guid);
-
-    // // let hex= uuidToHex('d3fd3540-6718-4687-956b-c8618a26e335', true);
-    // this.hex = uuidToHex(val, true);
-    // console.log(this.hex);
   }
 
   copyInputMessageToClipboard(inputElement) {

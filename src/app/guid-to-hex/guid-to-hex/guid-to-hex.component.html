@@ -7,27 +7,29 @@
 
         <label for="">standard Guid/UUID</label>
         <div class="input-group mb-3">
-          <input [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid" value=""
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
+              <i class="fa fa-copy    "> </i>
+            </button>
+          </div>
+          <input #guidInput [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid" value=""
             (click)="guidToHex(guid)">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-              <i class="fas fa-copy    "> </i>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
               <i class="fa fa-copy    "> </i>
-              <i class="fab fa-copy    "> </i>
-              <i class="fas fa-copy    "> </i>
-              <i class="fa fa-clipboard" aria-hidden="true"></i>
-              <i class="far fa-copy"></i>
             </button>
           </div>
         </div>
 
-
         <label for="">Hex</label>
         <div class="input-group mb-3">
-          <input [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i class="fa fa-copy    "> </i></button>
+          </div>
+          <input #hexInput [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
             (click)="hexToGuid(hex)">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i class="fa fa-copy    "> </i></button>
           </div>
         </div>
 
@@ -40,13 +42,13 @@
         <button type="submit" class="flex-fill btn btn-primary btn-lg ml-3" (click)="hexToGuid(hex)">Hex2Guid</button>
       </div>
 
-      <div class="col p-0 pt-3">
+      <!-- <div class="col p-0 pt-3">
         <div class="card">
           <div class="card-body p-2">
             <p class="card-text mb-2">multiple <code>space</code>, characters:</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>
