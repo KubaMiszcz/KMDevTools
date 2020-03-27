@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guid-to-hex.component.scss']
 })
 export class GuidToHexComponent implements OnInit {
+  guid: string;
+  hex: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  rename() { }
 
 }

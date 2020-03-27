@@ -1,1 +1,34 @@
-<p>guid-to-hex works!</p>
+<div class="col p-0 pt-4">
+  <div class="card">
+    <div class="card-body p-2">
+
+
+      <div class="form-group">
+        <label for="">standard Guid</label>
+        <input [(ngModel)]="guid" type="text" class="form-control mb-4" name="guid" id="guid" aria-describedby="helpId" placeholder="guid" value=""
+          (change)="rename()" (click)="rename()">
+        <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+
+        <label for="">Hex</label>
+        <input [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value="">
+        <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+      </div>
+
+
+
+      <div class="col p-0 pt-3">
+        <button type="submit" class="btn btn-block btn-primary btn-lg" (click)="rename()">Convert</button>
+      </div>
+
+      <div class="col p-0 pt-3">
+        <div class="card">
+          <div class="card-body p-2">
+            <p class="card-text mb-2">multiple <code>space</code>, characters:</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
