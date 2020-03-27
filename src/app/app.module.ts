@@ -1,3 +1,4 @@
+import { GuidToHexModule } from './guid-to-hex/guid-to-hex.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +17,8 @@ import { BranchNameFixerModule } from './branch-name-fixer-module/branch-name-fi
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BranchNameFixerModule
+    BranchNameFixerModule,
+    GuidToHexModule
   ],
   providers: [],
   bootstrap: [AppComponent]
