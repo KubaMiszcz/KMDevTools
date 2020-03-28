@@ -24,8 +24,6 @@ jobs:
     - name: buildstart
       run: echo == start build ==
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
 
     - name: Use Node.js 12.8
       uses: actions/setup-node@v1
@@ -42,24 +40,25 @@ jobs:
     - name: List output files
       run: ls
 
-#     - uses: actions/checkout@master
-#       with:
-#         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.0.0
-      with:
-        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
-        ftp-username: kubamiszcz-ftp
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-#         git-ftp-args: --dry-run
-#         .git-ftp-include
-        .git-ftp-include: dist/KMDevTools
-        local-dir: dist/KMDevTools # This folder is NOT going to upload by default unless you add it to .git-ftp-include
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1
+        with:
+#           ftp_host: ${{ secrets.FTP_HOST }}
+#           ftp_username: ${{ secrets.FTP_USERNAME }}
+#           ftp_password: ${{ secrets.FTP_PASSWORD }}
+          ftp_host: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
+          ftp-username: kubamiszcz-ftp
+          ftp-password: ${{ secrets.FTP_PASSWORD }}          
+          local_source_dir: dist
+          dist_target_dir: "my"
+#           delete: "true"
+
 
 #     - name: Test
 #       run: npm test -- --configuration=ci
 #     - name: E2E
 #       run: npm run e2e -- --configuration=ci
+    
     - name: buildend
       run: echo == end build ==
       
