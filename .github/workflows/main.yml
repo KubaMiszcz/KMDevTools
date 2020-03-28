@@ -43,9 +43,10 @@ jobs:
     - name: List output files
       run: ls
 
-    - name: FTP-Deploy-Action
+    - name: Simple FTP deploy
       uses: kevinpainchaud/simple-ftp-deploy-action@v1
       with:
+      # FTP host
 #           ftp_host: ${{ secrets.FTP_HOST }}
 #           ftp_username: ${{ secrets.FTP_USERNAME }}
 #           ftp_password: ${{ secrets.FTP_PASSWORD }}
@@ -53,7 +54,7 @@ jobs:
         ftp-username: kubamiszcz-ftp
         ftp-password: ${{ secrets.FTP_PASSWORD }}          
         local_source_dir: dist
-        dist_target_dir: "my"
+        dist_target_dir: my
 #           delete: "true"
 
 
