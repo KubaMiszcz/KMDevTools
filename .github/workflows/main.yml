@@ -41,23 +41,22 @@ jobs:
       run: npm run build -- --prod
       
     - name: List output files
-      run: ls
-
-    - name: Simple FTP deploy
-      uses: kevinpainchaud/simple-ftp-deploy-action@v1
+        run: ls
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-      # FTP host
-#           ftp_host: ${{ secrets.FTP_HOST }}
-#           ftp_username: ${{ secrets.FTP_USERNAME }}
-#           ftp_password: ${{ secrets.FTP_PASSWORD }}
-        ftp_host: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
+        # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
+        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
+        # FTP account username
         ftp-username: kubamiszcz-ftp
-        ftp-password: ${{ secrets.FTP_PASSWORD }}          
-        local_source_dir: dist
-        dist_target_dir: "my"
-#           delete: "true"
-
-
+        # FTP account password
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        # The local folder to copy, defaults to root project folder
+        local-dir: dist
+        # Passes through options into git-ftp
+        git-ftp-args: # optional
+    
+    
 #     - name: Test
 #       run: npm test -- --configuration=ci
 
