@@ -1,5 +1,2 @@
-!VERSION.txt
-dist/*
+# !VERSION.txt
 /dist
-/dist/KMDevTools/
-/dist/KMDevTools
