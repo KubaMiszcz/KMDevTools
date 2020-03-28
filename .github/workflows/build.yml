@@ -22,13 +22,17 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: buildstart
       run: echo == start build ==
-    - uses: actions/checkout@v2
+#     - uses: actions/checkout@v2
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 2
+
     - name: Use Node.js 12.8
       uses: actions/setup-node@v1
       with:
         node-version: 12.8
-    - name: Install dependencies
-      run: npm install
+#     - name: Install dependencies
+#       run: npm install
 #     - name: Lint
 #       run: npm run lint
     - name: Build
@@ -36,14 +40,19 @@ jobs:
       run: npm run build -- --prod
     - name: List output files
       run: ls
+
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 2
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server: ftp://91.219.122.5/kmdevtools.hostingasp.pl/wwwroot
+        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot
         ftp-username: kubamiszcz-ftp
         ftp-password: ${{ secrets.FTP_PASSWORD }}
 #         git-ftp-args: --dry-run
-        local-dir: dist # This folder is NOT going to upload by default unless you add it to .git-ftp-include
+#         .git-ftp-include
+        local-dir: dist/ # This folder is NOT going to upload by default unless you add it to .git-ftp-include
 
 #     - name: Test
 #       run: npm test -- --configuration=ci
