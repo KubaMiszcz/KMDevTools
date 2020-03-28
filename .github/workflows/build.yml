@@ -43,7 +43,7 @@ jobs:
         ftp-username: kubamiszcz-ftp
         ftp-password: ${{ secrets.FTP_PASSWORD }}
 #         git-ftp-args: --dry-run
-        local-dir: build # This folder is NOT going to upload by default unless you add it to .git-ftp-include
+        local-dir: dist # This folder is NOT going to upload by default unless you add it to .git-ftp-include
 
 #     - name: Test
 #       run: npm test -- --configuration=ci
