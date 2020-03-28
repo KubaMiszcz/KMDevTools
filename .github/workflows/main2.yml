@@ -7,13 +7,13 @@ on:
 
 jobs:
   build:
-    name: build&deploy2
+    name: build&deploy
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
+#       with:
+#         persist-credentials: false
 
     - name: Use Node.js 12.8
       uses: actions/setup-node@v1
@@ -35,7 +35,7 @@ jobs:
         host: 91.219.122.5
         user: kubamiszcz-ftp
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "dist"
-        remoteDir: "kmdevtools.hostingasp.pl/wwwroot"
-        forceSsl: false
+        localDir: "dist/KMDevTools"
+        remoteDir: "kmdevtools.hostingasp.pl/wwwroot/my"
+#         forceSsl: false
        
