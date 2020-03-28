@@ -48,7 +48,7 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot
+        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
         ftp-username: kubamiszcz-ftp
         ftp-password: ${{ secrets.FTP_PASSWORD }}
 #         git-ftp-args: --dry-run
