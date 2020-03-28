@@ -1,9 +1,9 @@
 name: CI-build-and-ftpdeployV2
 on:
   push:
-    branches: [ develop ]
+#     branches: [ develop ]
   pull_request:
-    branches: [ develop ]
+#     branches: [ develop ]
 
 jobs:
   build:
