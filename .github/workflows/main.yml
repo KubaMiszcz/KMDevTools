@@ -52,7 +52,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "dist/KMDevTools"
         remoteDir: "kmdevtools.hostingasp.pl/wwwroot"
-#         forceSsl: false
+        forceSsl: true
     
     
 #     - name: Test
