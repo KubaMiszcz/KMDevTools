@@ -1,0 +1,44 @@
+name: CI-build-and-ftpdeployV2
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    name: build-and-ftpdeploy
+    runs-on: ubuntu-latest
+    steps:
+#    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
+#       with:
+#         persist-credentials: false
+#         fetch-depth: 2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build -- --prod
+      
+    - name: List output files
+      run: ls
+
+##############
+        
+    
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      with:
+        ftp-server: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot
+        ftp-username: kubamiszcz-ftp
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        git-ftp-args: --insecure # if your certificate is setup correctly this can be removed        
+        local-dir: dist/KMDevTools # This folder is NOT going to upload by default unless you add it to .git-ftp-include
+
