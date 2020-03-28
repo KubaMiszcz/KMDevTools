@@ -53,6 +53,7 @@ jobs:
         ftp-password: ${{ secrets.FTP_PASSWORD }}
 #         git-ftp-args: --dry-run
 #         .git-ftp-include
+        .git-ftp-include: dist/KMDevTools
         local-dir: dist/KMDevTools # This folder is NOT going to upload by default unless you add it to .git-ftp-include
 
 #     - name: Test
