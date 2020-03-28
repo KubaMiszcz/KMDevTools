@@ -13,7 +13,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  mybuild:
+    name: build&deploy
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -22,15 +23,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: buildstart
       run: echo == start build ==
-#     - uses: actions/checkout@v2
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 2
+    - uses: actions/checkout@v2
 
     - name: Use Node.js 12.8
       uses: actions/setup-node@v1
       with:
-        node-version: 12.8
+        node-version: 12.8  
+
     - name: Install dependencies
       run: npm install
 #     - name: Lint
@@ -41,9 +40,9 @@ jobs:
     - name: List output files
       run: ls
 
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 2
+#     - uses: actions/checkout@master
+#       with:
+#         fetch-depth: 2
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
