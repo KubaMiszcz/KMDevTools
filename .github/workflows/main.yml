@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-buildV2
+name: CI-buildmain
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -45,15 +45,15 @@ jobs:
 
     - name: FTP-Deploy-Action
       uses: kevinpainchaud/simple-ftp-deploy-action@v1
-        with:
+      with:
 #           ftp_host: ${{ secrets.FTP_HOST }}
 #           ftp_username: ${{ secrets.FTP_USERNAME }}
 #           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          ftp_host: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
-          ftp-username: kubamiszcz-ftp
-          ftp-password: ${{ secrets.FTP_PASSWORD }}          
-          local_source_dir: dist
-          dist_target_dir: "my"
+        ftp_host: ftp://91.219.122.5:21/kmdevtools.hostingasp.pl/wwwroot/
+        ftp-username: kubamiszcz-ftp
+        ftp-password: ${{ secrets.FTP_PASSWORD }}          
+        local_source_dir: dist
+        dist_target_dir: "my"
 #           delete: "true"
 
 
