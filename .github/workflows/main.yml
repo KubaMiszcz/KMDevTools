@@ -16,7 +16,7 @@ jobs:
   build:
     name: build&deploy
     # The type of runner that the job will run on
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -54,7 +54,7 @@ jobs:
         ftp-username: kubamiszcz-ftp
         ftp-password: ${{ secrets.FTP_PASSWORD }}          
         local_source_dir: dist
-        dist_target_dir: my
+        dist_target_dir: "my"
 #           delete: "true"
 
 
