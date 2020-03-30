@@ -32,10 +32,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "assets/fontawesome-free-5.13.0-web/css/all.css"
+              "src/assets/fontawesome-free-5.13.0-web/css/all.css"
             ],
             "scripts": [
-              "assets/fontawesome-free-5.13.0-web/js/all.js"
+              "src/assets/fontawesome-free-5.13.0-web/js/all.js"
             ]
           },
           "configurations": {
@@ -99,10 +99,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "assets/fontawesome-free-5.13.0-web/css/all.css"
+              "src/assets/fontawesome-free-5.13.0-web/css/all.css"
             ],
             "scripts": [
-              "assets/fontawesome-free-5.13.0-web/js/all.js"
+              "src/assets/fontawesome-free-5.13.0-web/js/all.js"
             ]
           }
         },
