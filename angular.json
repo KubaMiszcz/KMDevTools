@@ -7,7 +7,10 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": [
+            "scss",
+            "css"
+          ]
         }
       },
       "root": "",
@@ -29,9 +32,11 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/font-awesome/scss/font-awesome.scss"
+              "assets/fontawesome-free-5.13.0-web/css/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "assets/fontawesome-free-5.13.0-web/js/all.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,9 +99,11 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/font-awesome/scss/font-awesome.scss"
+              "assets/fontawesome-free-5.13.0-web/css/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "assets/fontawesome-free-5.13.0-web/js/all.js"
+            ]
           }
         },
         "lint": {
