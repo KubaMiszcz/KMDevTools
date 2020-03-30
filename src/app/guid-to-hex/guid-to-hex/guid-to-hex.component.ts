@@ -2,6 +2,14 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as guidToHex from 'uuid-to-hex';
 import * as hexToGuid from 'hex-to-uuid';
 
+/**
+ * https://www.npmjs.com/package/hex-to-uuid
+ * https://www.npmjs.com/package/uuid-to-hex
+ * by Kirill Beresnev - DeRain
+ * https://github.com/derain
+ * Minsk, Belarus https://beresnev.pro
+ */
+
 @Component({
   selector: 'app-guid-to-hex',
   templateUrl: './guid-to-hex.component.html',
