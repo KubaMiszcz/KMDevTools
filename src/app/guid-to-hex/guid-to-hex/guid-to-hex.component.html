@@ -5,16 +5,29 @@
 
       <div class="form-group">
 
+        <div class="custom-control custom-switch mb-2">
+          <input [(ngModel)]="fullAuto" type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Toggle full auto ;] - convert and copy to clipboard</label>
+        </div>
+
         <label for="">standard Guid/UUID</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="guidToHex(guid)">
+              <i class="fas fa-sync-alt"></i>
+            </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
-              <i class="fa fa-copy    "> </i>
+              <i class="fas fa-copy"></i>
             </button>
           </div>
-          <input #guidInput [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid" value=""
-            (click)="guidToHex(guid)">
+
+          <input #guidInput [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid"
+            value="" (paste)=" pasteGuidToClipboard($event)">
+
           <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="guidToHex(guid)">
+              <i class="fas fa-sync-alt"></i>
+            </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
               <i class="fa fa-copy    "> </i>
             </button>
@@ -24,12 +37,22 @@
         <label for="">Hex</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i class="fa fa-copy    "> </i></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
+                class="fa fa-copy    "> </i></button>
           </div>
+
           <input #hexInput [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
-            (click)="hexToGuid(hex)">
+            (paste)="pasteHexToClipboard(hexInput)">
+
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i class="fa fa-copy    "> </i></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
+                class="fa fa-copy    "> </i></button>
           </div>
         </div>
 
