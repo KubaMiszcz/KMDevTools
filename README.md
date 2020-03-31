@@ -1,4 +1,4 @@
-# KMDevTools ![CI-build-and-ftpdeploy](https://github.com/KubaMiszcz/KMDevTools/workflows/CI-build-and-ftpdeploy/badge.svg?branch=develop)
+# KMDevTools ![CI-build-and-ftpdeploy](https://github.com/KubaMiszcz/KMDevTools/workflows/CI-build-and-ftpdeploy/badge.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
