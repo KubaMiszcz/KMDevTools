@@ -4,9 +4,7 @@ name: CI-build-and-ftpdeploy
 # events but only for the [xxxxx] branch
 on:
   push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+    branches: [ actionsbranchx ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,6 +21,8 @@ jobs:
       run: echo == start build ==
       
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
 #       with:
 #         persist-credentials: false
 
@@ -44,15 +44,28 @@ jobs:
     - name: List output files
       run: ls
 
-    - name: Upload to ftp
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        host: 91.219.122.5
-        user: kubamiszcz-ftp
-        password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "dist/KMDevTools"
-        remoteDir: "kmdevtools.hostingasp.pl/wwwroot"
-        forceSsl: true
+        ftp-server: ftp://91.219.122.5:21/wwwroot/
+        ftp-username: kubamiszcz-ftp
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        # The local folder to copy, defaults to root project folder
+        local-dir: dist/KMDevTools/
+        # Passes through options into git-ftp
+#         git-ftp-args: # optional
+
+
+
+#     - name: Upload to ftp
+#       uses: sebastianpopp/ftp-action@releases/v2
+#       with:
+#         host: 91.219.122.5
+#         user: kubamiszcz-ftp
+#         password: ${{ secrets.FTP_PASSWORD }}
+#         localDir: "dist/KMDevTools"
+#         remoteDir: "kmdevtools.hostingasp.pl/wwwroot"
+#         forceSsl: true
     
     
 #     - name: Test
