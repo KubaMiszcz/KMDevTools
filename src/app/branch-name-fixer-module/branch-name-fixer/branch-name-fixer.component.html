@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
 
-      <h3 class="mt-2">Branch/Commit name fixer</h3>
+      <h3 class="">Branch/Commit name fixer</h3>
 
       <div class="row">
 
@@ -37,15 +37,53 @@
           <div class="card">
             <div class="card-body p-2">
               <div class="form-group">
-                <label for="">branch-commit</label>
-                <input [(ngModel)]="branchName" type="text" class="form-control mb-4" name="branchname" id="branchname" aria-describedby="helpId"
-                  placeholder="branch/commit name" value="" (change)="rename()" (click)="rename()">
-                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                <label for="" class="mb-0">Branch name</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="rename()">
+                      <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                      <i class="fas fa-copy"></i>
+                    </button>
+                  </div>
 
-                <label for="">fixed-branch-commit</label>
-                <input [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname" id="fixedbranchname"
-                  aria-describedby="helpId" placeholder="fixed branch/commit name" value="">
-                <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                  <input #branchNameInput [(ngModel)]="branchName" type="text" class="form-control" name="branchname" id="branchname"
+                    aria-describedby="helpId" placeholder="branch/commit name" value="" (paste)="pasteFromClipboard($event)" (click)="rename()">
+                  <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="rename()">
+                      <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                      <i class="fa fa-copy    "> </i>
+                    </button>
+                  </div>
+                </div>
+
+
+
+                <label for="" class="mb-0">Fixed branch name</label>
+                <div class="input-group mb-3">
+
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                      <i class="fas fa-copy"></i>
+                    </button>
+                  </div>
+
+                  <input [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname" id="fixedbranchname"
+                    aria-describedby="helpId" placeholder="fixed branch/commit name" value="">
+                  <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                      <i class="fa fa-copy    "> </i>
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

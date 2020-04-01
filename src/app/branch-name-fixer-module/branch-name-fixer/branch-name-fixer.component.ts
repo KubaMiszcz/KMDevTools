@@ -6,17 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./branch-name-fixer.component.scss']
 })
 export class BranchNameFixerComponent implements OnInit {
-  branchName: string;
-  fixedBranchName: string;
+  branchName = '';
+  fixedBranchName = '';
   prefix = '';
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
 
   setPrefix(val: string) {
     this.prefix = val;
+    this.rename();
   }
 
   rename() {
@@ -26,6 +29,21 @@ export class BranchNameFixerComponent implements OnInit {
       .replace(/[._\s]*$/, '')
       .replace(/[ ]/gi, '_')
       .replace(/,/gi, '_i_');
+  }
+
+  copyInputMessageToClipboard(inputElement) {
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
+  }
+
+  pasteFromClipboard(event): any {
+    let val = event.clipboardData.getData('text');
+    setTimeout(() => {
+      this.branchName = val;
+      // this.guidToHex(val);
+      // console.log('pasted guid:', val);
+    }, 10);
   }
 
 }
