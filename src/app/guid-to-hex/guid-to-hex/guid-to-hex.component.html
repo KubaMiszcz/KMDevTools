@@ -22,7 +22,7 @@
           </div>
 
           <input #guidInput [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid"
-            value="" (paste)=" pasteGuidToClipboard($event)">
+            value="" (paste)=" pasteGuidFromClipboard($event)">
 
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="guidToHex(guid)">
@@ -37,7 +37,7 @@
         <label for="">Hex</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(hex)">
               <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
@@ -45,10 +45,10 @@
           </div>
 
           <input #hexInput [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
-            (paste)="pasteHexToClipboard(hexInput)">
+            (paste)="pasteHexFromClipboard($event)">
 
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(hex)">
               <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
@@ -67,14 +67,6 @@
           <i class="fas fa-forward    "></i> Guid</button>
       </div>
 
-
-      <!-- <div class="col p-0 pt-3">
-        <div class="card">
-          <div class="card-body p-2">
-            <p class="card-text mb-2">multiple <code>space</code>, characters:</p>
-          </div>
-        </div>
-      </div> -->
 
     </div>
   </div>

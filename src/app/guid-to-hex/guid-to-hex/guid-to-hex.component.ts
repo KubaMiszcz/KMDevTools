@@ -41,13 +41,12 @@ export class GuidToHexComponent implements OnInit {
       if (this.fullAuto) {
         setTimeout(() => {
           this.copyInputMessageToClipboard(this.hexInput.nativeElement);
-          console.warn(this.hexInput.nativeElement);
-          this.showAlert = true;
-          setTimeout(() => {
-            this.showAlert = false;
-          }, 3000);
         }, 10);
       }
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 3000);
     }
   }
 
@@ -57,19 +56,24 @@ export class GuidToHexComponent implements OnInit {
       // this.guidInput.nativeElement.value = this.guid;
       console.log(this.hex, '   ===>>>   ', this.guid);
       if (this.fullAuto) {
-        this.copyInputMessageToClipboard(this.guidInput.nativeElement);
+        setTimeout(() => {
+          this.copyInputMessageToClipboard(this.guidInput.nativeElement);
+        }, 10);
       }
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 3000);
     }
   }
 
   copyInputMessageToClipboard(inputElement) {
-    console.log(inputElement);
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
   }
 
-  pasteGuidToClipboard(event): any {
+  pasteGuidFromClipboard(event): any {
     let val = event.clipboardData.getData('text');
     setTimeout(() => {
       this.guid = val;
@@ -78,10 +82,10 @@ export class GuidToHexComponent implements OnInit {
     }, 10);
   }
 
-  pasteHexToClipboard(event): any {
+  pasteHexFromClipboard(event): any {
     let val = event.clipboardData.getData('text');
     setTimeout(() => {
-      this.guid = val;
+      this.hex = val;
       this.hexToGuid(val);
       console.log('pasted hex:', val);
     }, 10);
