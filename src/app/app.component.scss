@@ -1,0 +1,23 @@
+.push {
+  min-height: 24px;
+}
+
+.nav-item {
+  background-color: #808b9847;
+  color: #adb5bd;
+}
+
+.nav-item {
+  background-color: hsla(212, 10%, 35%, 0.28);
+  color: hsl(210, 11%, 55%);
+}
+
+.nav-link {
+  background-color: hsla(212, 10%, 35%, 0.28);
+  color: hsl(210, 11%, 55%);
+}
+
+.nav-link.active {
+  background-color: hsla(242, 18%, 63%, 0.4);
+  color: hsla(238, 41%, 76%, 1);
+}

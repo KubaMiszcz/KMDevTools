@@ -14,7 +14,7 @@
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="guidToHex(guid)">
-              <i class="fas fa-sync-alt"></i>
+              <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
               <i class="fas fa-copy"></i>
@@ -22,11 +22,11 @@
           </div>
 
           <input #guidInput [(ngModel)]="guid" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId" placeholder="guid"
-            value="" (paste)=" pasteGuidToClipboard($event)">
+            value="" (paste)=" pasteGuidFromClipboard($event)">
 
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="guidToHex(guid)">
-              <i class="fas fa-sync-alt"></i>
+              <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(guidInput)">
               <i class="fa fa-copy    "> </i>
@@ -37,19 +37,19 @@
         <label for="">Hex</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
-              <i class="fas fa-sync-alt"></i>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(hex)">
+              <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
                 class="fa fa-copy    "> </i></button>
           </div>
 
           <input #hexInput [(ngModel)]="hex" type="text" class="form-control" name="hex" id="hex" aria-describedby="helpId" placeholder="hex" value=""
-            (paste)="pasteHexToClipboard(hexInput)">
+            (paste)="pasteHexFromClipboard($event)">
 
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(guid)">
-              <i class="fas fa-sync-alt"></i>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="hexToGuid(hex)">
+              <i class="fas fa-exchange-alt"></i>
             </button>
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyInputMessageToClipboard(hexInput)"> <i
                 class="fa fa-copy    "> </i></button>
@@ -61,19 +61,26 @@
 
 
       <div class="col p-0 pt-3 d-flex">
-        <button type="submit" class="flex-fill btn btn-primary btn-lg " (click)="guidToHex(guid)">Guid2Hex</button>
-        <button type="submit" class="flex-fill btn btn-primary btn-lg ml-3" (click)="hexToGuid(hex)">Hex2Guid</button>
+        <button type="submit" class="flex-fill btn btn-primary btn-lg " (click)="guidToHex(guid)">Guid
+          <i class="fas fa-forward    "></i> Hex</button>
+        <button type="submit" class="flex-fill btn btn-primary btn-lg ml-3" (click)="hexToGuid(hex)">Hex
+          <i class="fas fa-forward    "></i> Guid</button>
       </div>
 
-      <!-- <div class="col p-0 pt-3">
-        <div class="card">
-          <div class="card-body p-2">
-            <p class="card-text mb-2">multiple <code>space</code>, characters:</p>
-          </div>
-        </div>
-      </div> -->
 
     </div>
   </div>
 
 </div>
+
+<div *ngIf="showAlert" class="alert alert-info m-4" role="alert">
+  Converted! {{fullAuto?'And copied to clipboard':''}}
+</div>
+
+
+
+
+<!-- <ngb-toast *ngIf="showAlert" class="m-4" header="Converted! {{fullAuto?'And copied to clipboard':''}}" content="asdsad" [autohide]="true"
+  [delay]="3000">
+  (hide)="showAlert = false"
+</ngb-toast> -->
