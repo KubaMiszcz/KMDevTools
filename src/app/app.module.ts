@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { GuidToHexModule } from './guid-to-hex/guid-to-hex.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { BranchNameFixerModule } from './branch-name-fixer-module/branch-name-fi
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     BranchNameFixerModule,
     GuidToHexModule
   ],
