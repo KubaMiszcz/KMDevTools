@@ -23,12 +23,14 @@ export class GuidToHexComponent implements OnInit {
   hex: string; // = '0xd3fd354067184687956bc8618a26e335';
 
   fullAuto: boolean;
+  showAlert: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
     this.guid = '{d3fd3540-6718-4687-956b-c8618a26e335}';
     this.fullAuto = true;
+    this.showAlert = false;
   }
 
   guidToHex(val: string) {
@@ -40,6 +42,10 @@ export class GuidToHexComponent implements OnInit {
         setTimeout(() => {
           this.copyInputMessageToClipboard(this.hexInput.nativeElement);
           console.warn(this.hexInput.nativeElement);
+          this.showAlert = true;
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 3000);
         }, 10);
       }
     }
