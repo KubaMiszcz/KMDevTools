@@ -5,23 +5,42 @@
     <div class="col-6">
 
       <ul class="nav nav-tabs" id="myTab" role="tablist">
+
         <li class="nav-item">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#BranchNameFixer" role="tab" aria-controls="home" aria-selected="true">
             <i class="fas fa-toolbox    "></i>
             Branch Name Fixer</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Guid2Hex" role="tab" aria-controls="profile" aria-selected="false">
             Guid<i class="fas fa-exchange-alt"></i>Hex</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#attendance" role="tab" aria-controls="profile" aria-selected="false">
+            Attendance</a>
+        </li>
+
       </ul>
+
+
+
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade  show active" id="BranchNameFixer" role="tabpanel" aria-labelledby="home-tab">
+
+
+        <div class="tab-pane fade  " id="BranchNameFixer" role="tabpanel" aria-labelledby="home-tab">
           <app-branch-name-fixer></app-branch-name-fixer>
         </div>
+
         <div class="tab-pane fade" id="Guid2Hex" role="tabpanel" aria-labelledby="profile-tab">
           <app-guid-to-hex></app-guid-to-hex>
         </div>
+
+        <div class="tab-pane fade show active" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
+          <app-attendance></app-attendance>
+        </div>
+
       </div>
     </div>
 

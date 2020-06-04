@@ -1,0 +1,52 @@
+<div class="col p-0 pt-4">
+  <div class="card">
+    <div class="card-body p-2">
+
+
+      <div class="form-group">
+
+        <div class="custom-control custom-switch mb-2">
+          <input [(ngModel)]="fullAuto" type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">set and copy to clipboard</label>
+        </div>
+
+        <!-- <label for="">standard Guid/UUID</label> -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="generateAttendanceMessage()">
+              <i class="fas fa-exchange-alt"></i>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(attendanceInput)">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <input #attendanceInput [(ngModel)]="attendanceMessage" type="text" class="form-control" name="guid" id="guid" aria-describedby="helpId"
+            placeholder="Today Attendance Message" value="">
+
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="generateAttendanceMessage()">
+              <i class="fas fa-exchange-alt"></i>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(attendanceInput)">
+              <i class="fa fa-copy    "> </i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col p-0 pt-3 d-flex">
+        <button type="submit" class="flex-fill btn btn-primary btn-lg " (click)="generateAttendanceMessage()">Generate Attendance message </button>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="showAlert" class="alert alert-info m-4" role="alert">
+  Generated! {{fullAuto?'And copied to clipboard':''}}
+</div>

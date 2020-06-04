@@ -6,10 +6,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BranchNameFixerModule } from './branch-name-fixer-module/branch-name-fixer.module';
+import { AttendanceComponent } from './attendance/attendance.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,
