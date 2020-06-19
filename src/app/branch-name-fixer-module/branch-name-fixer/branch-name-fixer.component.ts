@@ -17,8 +17,10 @@ export class BranchNameFixerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setPrefix(val: string) {
-    this.prefix = val;
+  setPrefix(val: any) {
+    if (!!val?.target?.textContent || (val?.target?.textContent === 'none')) {
+      this.prefix = val.target.textContent;
+    }
     this.rename();
   }
 
@@ -38,7 +40,7 @@ export class BranchNameFixerComponent implements OnInit {
   }
 
   pasteFromClipboard(event): any {
-    let val = event.clipboardData.getData('text');
+    const val = event.clipboardData.getData('text');
     setTimeout(() => {
       this.branchName = val;
       // this.guidToHex(val);

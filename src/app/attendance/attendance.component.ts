@@ -28,10 +28,10 @@ export class AttendanceComponent implements OnInit {
 
   generateAttendanceMessage() {
     // [Attendance] 06/04/2020 08:05 - 16:05
-    let today = new Date();
+    const today = new Date();
     this.attendanceMessage = '[Attendance] '
-      + today.getDate().toString().toString().padStart(2, "0") + '/' + today.getMonth().toString().padStart(2, "0") + '/' + today.getFullYear() + ' '
-      + today.getHours().toString().padStart(2, "0") + ':' + today.getMinutes().toString().padStart(2, "0")
-      + ' - ' + (today.getHours() + this.workDayHours).toString().padStart(2, "0") + ':' + today.getMinutes().toString().padStart(2, "0");
+      + today.getDate().toString().toString().padStart(2, '0') + '/' + today.getMonth().toString().padStart(2, '0') + '/' + today.getFullYear() + ' '
+      + today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0')
+      + ' - ' + (today.getHours() + this.workDayHours).toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
   }
 }

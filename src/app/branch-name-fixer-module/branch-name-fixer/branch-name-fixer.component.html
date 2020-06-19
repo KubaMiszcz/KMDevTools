@@ -12,19 +12,29 @@
               <p class="card-text mb-2">Prefix:</p>
               <div class="form-group">
                 <!-- Default inline 1-->
-                <div class="custom-control custom-radio mb-2" (click)="setPrefix('')">
+
+
+                <div class="custom-control custom-radio mb-2 d-inline-flex" (click)="setPrefix($event)">
+                  <input type="radio" class="custom-control-input" id="customRadio11" name="inlineDefaultRadiosExample">
+                  <label class="custom-control-label" for="customRadio11"></label>
+
+                  <input [(ngModel)]="prefix" type="text" class="form-control-sm " name="" id="" placeholder="">
+                </div>
+
+                <!-- Default inline 1-->
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix($event)">
                   <input type="radio" class="custom-control-input" id="customRadio1" name="inlineDefaultRadiosExample">
                   <label class="custom-control-label" for="customRadio1">none</label>
                 </div>
 
                 <!-- Default inline 2-->
-                <div class="custom-control custom-radio mb-2" (click)="setPrefix('feature/')">
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix($event)">
                   <input type="radio" class="custom-control-input" id="customRadio2" name="inlineDefaultRadiosExample">
                   <label class="custom-control-label" for="customRadio2">feature/</label>
                 </div>
 
                 <!-- Default inline 3-->
-                <div class="custom-control custom-radio mb-2" (click)="setPrefix('bugfix/')">
+                <div class="custom-control custom-radio mb-2" (click)="setPrefix($event)">
                   <input type="radio" class="custom-control-input" id="customRadio3" name="inlineDefaultRadiosExample">
                   <label class="custom-control-label" for="customRadio3">bugfix/</label>
                 </div>
@@ -68,17 +78,19 @@
                 <div class="input-group mb-3">
 
                   <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                      (click)="copyInputMessageToClipboard(fixedBranchNameInput)">
                       <i class="fas fa-copy"></i>
                     </button>
                   </div>
 
-                  <input [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname" id="fixedbranchname"
-                    aria-describedby="helpId" placeholder="fixed branch/commit name" value="">
+                  <input #fixedBranchNameInput [(ngModel)]="fixedBranchName" type="text" class="form-control" name="fixedbranchname"
+                    id="fixedbranchname" aria-describedby="helpId" placeholder="fixed branch/commit name" value="">
                   <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
 
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="copyInputMessageToClipboard(branchNameInput)">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                      (click)="copyInputMessageToClipboard(fixedBranchNameInput)">
                       <i class="fa fa-copy    "> </i>
                     </button>
                   </div>
