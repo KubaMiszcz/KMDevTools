@@ -7,18 +7,24 @@
       <ul class="nav nav-tabs" id="myTab" role="tablist">
 
         <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#BranchNameFixer" role="tab" aria-controls="home" aria-selected="true">
+          <a class="nav-link active" id="BranchNameFixer-tab" data-toggle="tab" href="#BranchNameFixer" role="tab" aria-controls="BranchNameFixer">
             <i class="fas fa-toolbox    "></i>
             Branch Name Fixer</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Guid2Hex" role="tab" aria-controls="profile" aria-selected="false">
+          <a class="nav-link" id="CaseConverter-tab" data-toggle="tab" href="#CaseConverter" role="tab" aria-controls="CaseConverter"
+            aria-selected="true">
+            Case Converter</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="Guid2Hex-tab" data-toggle="tab" href="#Guid2Hex" role="tab" aria-controls="Guid2Hex" aria-selected="false">
             Guid<i class="fas fa-exchange-alt"></i>Hex</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#attendance" role="tab" aria-controls="profile" aria-selected="false">
+          <a class="nav-link" id="attendance-tab" data-toggle="tab" href="#attendance" role="tab" aria-controls="attendance" aria-selected="false">
             Attendance</a>
         </li>
 
@@ -29,11 +35,15 @@
       <div class="tab-content" id="myTabContent">
 
 
-        <div class="tab-pane fade show active " id="BranchNameFixer" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade  " id="BranchNameFixer" role="tabpanel" aria-labelledby="BranchNameFixer-tab">
           <app-branch-name-fixer></app-branch-name-fixer>
         </div>
 
-        <div class="tab-pane fade" id="Guid2Hex" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade show active" id="CaseConverter" role="tabpanel" aria-labelledby="CaseConverter-tab">
+          <app-case-converter></app-case-converter>
+        </div>
+
+        <div class="tab-pane fade" id="Guid2Hex" role="tabpanel" aria-labelledby="Guid2Hex-tab">
           <app-guid-to-hex></app-guid-to-hex>
         </div>
 

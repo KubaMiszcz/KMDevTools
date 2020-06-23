@@ -1,3 +1,4 @@
+import { CaseConverterComponent } from './case-converter/case-converter.component';
 import { SharedModule } from './shared/shared.module';
 import { GuidToHexModule } from './guid-to-hex/guid-to-hex.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,8 @@ import { AttendanceComponent } from './attendance/attendance.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    CaseConverterComponent
   ],
   imports: [
     BrowserModule,
