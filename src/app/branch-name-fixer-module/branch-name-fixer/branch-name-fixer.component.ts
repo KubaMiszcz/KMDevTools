@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BranchNameFixerComponent implements OnInit {
   branchName = '';
   fixedBranchName = '';
-  prefix = 'km-temp\\';
+  prefix = 'km-temp/';
 
   constructor() {
 
